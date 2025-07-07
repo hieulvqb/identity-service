@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  mysql-spring-boot:
+    image: mysql:8.0
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: identity_db
+      MYSQL_PASSWORD: 1
+    ports:
+      - "2234:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+    build: .
+    container_name: identity-service
+    ports:
+      - "2345:8080"
+    depends_on:
+      - mysql-spring-boot
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-spring-boot:3306/identity_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "2346:8080"
+    depends_on:
+      - mysql-spring-boot
+
+volumes:
+  mysql_data:

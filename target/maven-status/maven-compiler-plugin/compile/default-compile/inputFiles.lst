@@ -1,0 +1,6 @@
+/Users/hieulvqb/Repositories/hieulv/java/identity-service/src/main/java/com/identity/identity/service/IdentityServiceApplication.java
+/Users/hieulvqb/Repositories/hieulv/java/identity-service/src/main/java/com/identity/identity/service/controller/UserController.java
+/Users/hieulvqb/Repositories/hieulv/java/identity-service/src/main/java/com/identity/identity/service/dto/request/UserCreationRequest.java
+/Users/hieulvqb/Repositories/hieulv/java/identity-service/src/main/java/com/identity/identity/service/entity/User.java
+/Users/hieulvqb/Repositories/hieulv/java/identity-service/src/main/java/com/identity/identity/service/repository/UserRepository.java
+/Users/hieulvqb/Repositories/hieulv/java/identity-service/src/main/java/com/identity/identity/service/service/UserService.java
