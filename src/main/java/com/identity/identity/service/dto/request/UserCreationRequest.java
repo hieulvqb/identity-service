@@ -1,5 +1,6 @@
 package com.identity.identity.service.dto.request;
 
+import com.identity.identity.service.exception.ErrorCode;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Size;
 
@@ -7,13 +8,12 @@ import java.time.LocalDate;
 
 public class UserCreationRequest {
 
-    @Size(min = 3, message = "Username must be at least 3 characters long")
+    @Size(min = 3, message = "USERNAME_INVALID")
     private String username;
 
-    @Size(min = 8, message = "Password must be at least 8 characters long")
+    @Size(min = 8, message = "INVALID_PASSWORD")
     private String password;
 
-    @Email(message = "Email should be valid")
     private String email;
     private String firstName;
     private String lastName;
